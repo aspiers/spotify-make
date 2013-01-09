@@ -115,7 +115,7 @@ syslinks: unpack extra_libs
 	    hostlink=$$( ldconfig -p | grep $$hostlink | sed 's/.*=>//'  \
                          | egrep '$(archlib)' || :);                     \
 	    if test "$$hostlink" != ''; then                             \
-                ln -sf $$hostlink $$dep;                                 \
+                ln -sf $$dep $$hostlink;                                 \
 	        echo INFO: "resolving $$dep as \"$$hostlink\"";          \
 	    else                                                         \
 	        echo "WARNING; cant resolve spotify dependency: $$dep" ; \
